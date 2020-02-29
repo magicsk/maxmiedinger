@@ -1,0 +1,233 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(fonts/Montserrat-Regular.ttf);
+}
+html, body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  will-change: transform;
+  backface-visibility: hidden;
+  height: 130vh;
+  position: fixed;
+  width: 100%;
+  transform: translateY(30vh);
+  transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
+}
+.background:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.background:first-child {
+  background-image: url(img/Helvetica.png);
+  transform: translateY(-15vh);
+}
+.background:first-child .content-wrapper {
+  transform: translateY(15vh);
+}
+.background:nth-child(2) {
+  background-image: url(img/max.png);
+}
+.background:nth-child(3) {
+  background-image: url(img/typography.png);
+}
+
+.background:nth-child(4) {
+  background-image: url(img/Helvetica.jpg);
+}
+
+/* Set stacking context of slides */
+.background:nth-child(1) {
+  z-index: 3;
+}
+
+.background:nth-child(2) {
+  z-index: 2;
+}
+
+.background:nth-child(3) {
+  z-index: 1;
+}
+
+.background:nth-child(4) {
+  z-index: 0;
+}
+
+.content-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-flow: column nowrap;
+  color: #fff;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  transform: translateY(40vh);
+  will-change: transform;
+  backface-visibility: hidden;
+  transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
+}
+.background:nth-child(1) .title {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 13%;
+  font-size: 750%;
+  line-height: 1.4;
+}
+.background:nth-child(2) .title, .background:nth-child(3) .title {
+  font-size: 750%;
+  line-height: 1.4;
+}
+.background:nth-child(4) .title{
+  font-size: 650%;
+  line-height: 1.4;
+  padding-bottom: 4%;
+}
+.background:nth-child(1) .subtitle{
+  position: absolute;
+  left: 5%;
+  bottom: 35%;
+  font-size: 24px;
+  width: 60%;
+}
+
+.background:nth-child(2) .subtitle, .background:nth-child(3) .subtitle{
+  font-size: 24px;
+  margin: 0 20%;
+}
+.subtitle span{
+  margin-left: 55%;
+}
+#profile{
+  position: absolute;
+  right: 10%;
+  top: 35%;
+  width: 407px;
+  height: 407px;
+}
+.icotext{
+  margin-left: 16%;
+  position: absolute;
+  bottom: 30%;
+}
+.rectangles{
+  display: inline-block;
+  max-height: 350px;
+  margin: 0 15%;
+}
+.rectangle:nth-child(2){
+  margin: 0 15%;
+}
+.rectangle{
+  border: 5px #fff solid;
+  border-radius: 30px;
+  width: 22%;
+  min-width: 200px;
+  height: 400px;
+  float: left;
+}
+.rectangle img{
+  margin-top: 15%;
+}
+.rectangle .subtitle{
+  margin: 5%;
+  height: 60px;
+}
+.rectangle button{
+  color: #fff;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  border: 5px #fff solid;
+  border-radius: 30px;
+  width: 165px;
+  height: 50px;
+  margin-top: 35px;
+  background: none;
+  cursor: pointer;
+}
+.modal-body input{
+  margin-top: 5%;
+}
+.copy{
+ margin-top: 5%;
+ margin-right: 50%;
+}
+.background.up-scroll {
+  transform: translate3d(0, -15vh, 0);
+}
+.background.up-scroll .content-wrapper {
+  transform: translateY(15vh);
+}
+.background.up-scroll + .background {
+  transform: translate3d(0, 30vh, 0);
+}
+.background.up-scroll + .background .content-wrapper {
+  transform: translateY(30vh);
+}
+
+.background.down-scroll {
+  transform: translate3d(0, -130vh, 0);
+}
+.background.down-scroll .content-wrapper {
+  transform: translateY(40vh);
+}
+.background.down-scroll + .background:not(.down-scroll) {
+  transform: translate3d(0, -15vh, 0);
+}
+.background.down-scroll + .background:not(.down-scroll) .content-wrapper {
+  transform: translateY(15vh);
+}
+
+#dot1, #dot2{
+  border-top: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
+  position: fixed;
+  z-index: 10;
+}
+#dot1{
+  top: 2%;
+  left: 50%;
+  border-bottom: 15px solid #fff;
+}
+#dot2{
+  bottom: 2%;
+  left: 50%;
+  border-top: 15px solid #fff;
+}
+
+@media (max-width: 1080px) {
+  #profile{
+    right: 28%;
+  }
+  .background:nth-child(1) .subtitle.subtitle{
+    left: 21%;
+    bottom: 20%;
+  }
+  .icotext{
+    margin-left: 11%;
+    bottom: 17%
+  }
+  .rectangles{
+    margin: 0 10%;
+  }
+  .rectangle:nth-child(2){
+    margin: 0 10%;
+  }
+}
