@@ -1,8 +1,10 @@
 @font-face {
   font-family: Montserrat;
-  src: url(fonts/Montserrat-Regular.ttf);
+  src: url(../fonts/Montserrat-Regular.ttf);
 }
-html, body {
+
+html,
+body {
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -21,6 +23,7 @@ html, body {
   transform: translateY(30vh);
   transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
 }
+
 .background:before {
   content: "";
   position: absolute;
@@ -32,22 +35,26 @@ html, body {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.3);
 }
+
 .background:first-child {
-  background-image: url(img/Helvetica.png);
+  background-image: url(../img/Helvetica.png);
   transform: translateY(-15vh);
 }
+
 .background:first-child .content-wrapper {
   transform: translateY(15vh);
 }
+
 .background:nth-child(2) {
-  background-image: url(img/max.png);
+  background-image: url(../img/max.png);
 }
+
 .background:nth-child(3) {
-  background-image: url(img/typography.png);
+  background-image: url(../img/typography.png);
 }
 
 .background:nth-child(4) {
-  background-image: url(img/Helvetica.jpg);
+  background-image: url(../img/Helvetica.jpg);
 }
 
 /* Set stacking context of slides */
@@ -81,6 +88,7 @@ html, body {
   backface-visibility: hidden;
   transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
 }
+
 .background:nth-child(1) .title {
   position: absolute;
   left: 10%;
@@ -89,16 +97,20 @@ html, body {
   font-size: 750%;
   line-height: 1.4;
 }
-.background:nth-child(2) .title, .background:nth-child(3) .title {
+
+.background:nth-child(2) .title,
+.background:nth-child(3) .title {
   font-size: 750%;
   line-height: 1.4;
 }
-.background:nth-child(4) .title{
+
+.background:nth-child(4) .title {
   font-size: 650%;
   line-height: 1.4;
   padding-bottom: 4%;
 }
-.background:nth-child(1) .subtitle{
+
+.background:nth-child(1) .subtitle {
   position: absolute;
   left: 5%;
   bottom: 35%;
@@ -106,34 +118,41 @@ html, body {
   width: 60%;
 }
 
-.background:nth-child(2) .subtitle, .background:nth-child(3) .subtitle{
+.background:nth-child(2) .subtitle,
+.background:nth-child(3) .subtitle {
   font-size: 24px;
   margin: 0 20%;
 }
-.subtitle span{
+
+.subtitle span {
   margin-left: 55%;
 }
-#profile{
+
+#profile {
   position: absolute;
   right: 10%;
   top: 35%;
   width: 407px;
   height: 407px;
 }
-.icotext{
+
+.icotext {
   margin-left: 16%;
   position: absolute;
   bottom: 30%;
 }
-.rectangles{
+
+.rectangles {
   display: inline-block;
   max-height: 350px;
   margin: 0 15%;
 }
-.rectangle:nth-child(2){
+
+.rectangle:nth-child(2) {
   margin: 0 15%;
 }
-.rectangle{
+
+.rectangle {
   border: 5px #fff solid;
   border-radius: 30px;
   width: 22%;
@@ -141,14 +160,17 @@ html, body {
   height: 400px;
   float: left;
 }
-.rectangle img{
+
+.rectangle img {
   margin-top: 15%;
 }
-.rectangle .subtitle{
+
+.rectangle .subtitle {
   margin: 5%;
   height: 60px;
 }
-.rectangle button{
+
+.rectangle button {
   color: #fff;
   font-family: Montserrat;
   text-transform: uppercase;
@@ -160,40 +182,64 @@ html, body {
   background: none;
   cursor: pointer;
 }
-.modal-body input{
+
+.modal-body input {
   margin-top: 5%;
 }
-.copy{
- margin-top: 5%;
- margin-right: 50%;
+
+.modal-footer{
+  justify-content: space-between;
 }
+
+#mimg .modal-footer{
+  justify-content: end;
+}
+
+#response {
+  margin: 15px;
+  margin-bottom: 0;
+  transition: all ease-in-out 0.3s;
+  transform: scale(0);
+}
+
+.copy {
+  margin-top: 3%;
+}
+
 .background.up-scroll {
   transform: translate3d(0, -15vh, 0);
 }
+
 .background.up-scroll .content-wrapper {
   transform: translateY(15vh);
 }
-.background.up-scroll + .background {
+
+.background.up-scroll+.background {
   transform: translate3d(0, 30vh, 0);
 }
-.background.up-scroll + .background .content-wrapper {
+
+.background.up-scroll+.background .content-wrapper {
   transform: translateY(30vh);
 }
 
 .background.down-scroll {
   transform: translate3d(0, -130vh, 0);
 }
+
 .background.down-scroll .content-wrapper {
   transform: translateY(40vh);
 }
-.background.down-scroll + .background:not(.down-scroll) {
+
+.background.down-scroll+.background:not(.down-scroll) {
   transform: translate3d(0, -15vh, 0);
 }
-.background.down-scroll + .background:not(.down-scroll) .content-wrapper {
+
+.background.down-scroll+.background:not(.down-scroll) .content-wrapper {
   transform: translateY(15vh);
 }
 
-#dot1, #dot2{
+#dot1,
+#dot2 {
   border-top: 15px solid transparent;
   border-right: 15px solid transparent;
   border-bottom: 15px solid transparent;
@@ -201,33 +247,39 @@ html, body {
   position: fixed;
   z-index: 10;
 }
-#dot1{
+
+#dot1 {
   top: 2%;
   left: 50%;
   border-bottom: 15px solid #fff;
 }
-#dot2{
+
+#dot2 {
   bottom: 2%;
   left: 50%;
   border-top: 15px solid #fff;
 }
 
 @media (max-width: 1080px) {
-  #profile{
+  #profile {
     right: 28%;
   }
-  .background:nth-child(1) .subtitle.subtitle{
+
+  .background:nth-child(1) .subtitle.subtitle {
     left: 21%;
     bottom: 20%;
   }
-  .icotext{
+
+  .icotext {
     margin-left: 11%;
     bottom: 17%
   }
-  .rectangles{
+
+  .rectangles {
     margin: 0 10%;
   }
-  .rectangle:nth-child(2){
+
+  .rectangle:nth-child(2) {
     margin: 0 10%;
   }
 }
